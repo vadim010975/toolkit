@@ -1,74 +1,25 @@
-.page {
+.layout {
+  position: relative;
+  min-height: 100vh;
   padding: 20px;
+  background-color: #578dde;
+  color: #c6d6ed;
 }
 
-.home-page__list {
-  position: relative;
-  width: 500px;
-  padding: 10px;
-  border: 1px solid #000000;
-  border-radius: 5px;;
-}
-
-.home-page__btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-}
-
-.post {
-  width: 100%;
-  border: 1px solid #000000;
+button {
+  background-color: #578dde;
+  color: #c6d6ed;
+  border: 1px solid #c6d6ed;
   border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.add-form {
-  position: relative;
-  width: 500px;
-  border: 1px solid #000000;
-  border-radius: 5px;
-  padding: 10px;
-}
-
-.add-form__input {
-  display: block;
-  width: 100%;
-  height: 100px;
-  margin-bottom: 10px;
   padding: 5px;
-}
-
-.add-form__btn_cancel {
-  position: absolute;
-  top: 5px;
-  right: 5px;
   cursor: pointer;
 }
 
-.add-form__btn_submit {
-  cursor: pointer;
+button:hover {
+  background-color: #4c83d9;
 }
 
-.view-card {
-  width: 500px;
-  border: 1px solid #000000;
+img {
+  width: 300px;
   border-radius: 5px;
-  padding: 10px;
-}
-
-.view-card__content {
-  width: 100%;
-  min-height: 70px;
-  border: 1px solid #000000;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.view-card__btn_edit, .view-card__btn_remove {
-  margin-right: 10px;
-  cursor: pointer;
 }

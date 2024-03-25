@@ -17,6 +17,7 @@ const initialState: cardState = {
     director: "",
     actors: "",
     imdbRating: "",
+    response: "True",
   },
   status: "idle",
 };
@@ -34,6 +35,7 @@ export const fetchCardMovie = createAsyncThunk(
       actors: response.Actors,
       imdbRating: response.imdbRating,
       poster: response.Poster,
+      response: response.Response,
     } as CardMovie;
   },
 );
@@ -53,8 +55,8 @@ export const cardSlice = createSlice({
         state.status = "loading";
       })
       .addCase(fetchCardMovie.fulfilled, (state, action) => {
-        state.status = "idle";
         state.card = action.payload;
+        state.status = "idle";
       })
       .addCase(fetchCardMovie.rejected, (state) => {
         state.status = "failed";
@@ -63,6 +65,7 @@ export const cardSlice = createSlice({
 });
 
 export const selectCard = (state: RootState) => state.card.card;
+export const selectCardStatus = (state: RootState) => state.card.status;
 
 export const { clear } = cardSlice.actions;
 

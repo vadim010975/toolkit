@@ -8,12 +8,13 @@ export interface Movie {
 
 
 export interface CardMovie {
-  poster: string,
-  title: string,
-  year: string,
-  genre: string,
-  runtime: string,
-  director: string,
-  actors: string,
-  imdbRating: string,
+  poster: string | undefined,
+  title: string | undefined,
+  year: string | undefined,
+  genre: string | undefined,
+  runtime: string | undefined,
+  director: string | undefined,
+  actors: string | undefined,
+  imdbRating: string | undefined,
+  response: "False" | "True",
 }

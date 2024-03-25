@@ -15,12 +15,11 @@ export const favoritesSlice = createSlice({
   initialState,
   reducers: {
     addMovie(state, action: PayloadAction<Movie>) {
-      if (!state.movies.includes(action.payload)) {
+      if (!state.movies.some(movie => action.payload.imdbID === movie.imdbID)) {
         state.movies.push(action.payload);
       }
     },
     removeMovie(state, action: PayloadAction<Movie>) {
-      console.log("removeMovie", action.payload);
       state.movies = state.movies.filter(movie => movie.imdbID !== action.payload.imdbID);
     },
   },

@@ -1,0 +1,72 @@
+.search {
+  padding: 20px;
+  border: 1px solid #1c3962;
+  border-radius: 5px;
+  min-height: calc(100vh - 40px);
+}
+
+.search__title {
+  margin-bottom: 20px;
+  color: #1c3962;
+}
+
+.search__form {
+  margin-bottom: 20px;
+}
+
+.search__form_input-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.search__form_input {
+  width: 500px;
+  border: 1px solid #c6d6ed;
+  border-radius: 5px;
+  background-color: #578dde;
+  color: #c6d6ed;
+  padding: 5px;
+}
+
+.search__form_input:focus-visible {
+  outline: none;
+}
+
+.search__form_btn_reset {
+  position: absolute;
+  top: 4px;
+  right: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #c6d6ed;
+  color: #578dde;
+  padding: 2px 5px;
+}
+
+.search__form_btn_reset:hover {
+  background-color: #4c83d9;
+  color: #c6d6ed;
+}
+
+.search__form_btn_submit {
+  margin-right: 10px;
+}
+
+.search-list__item {
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid #c6d6ed;
+  border-radius: 5px;
+  padding: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.search-list__item_title, .search-list__item_year {
+  margin-bottom: 5px;
+}
+
+.search-list__item_img {
+  margin-bottom: 5px;
+}

@@ -4,6 +4,7 @@ import Card from './features/Card/Card';
 import Favorites from './features/Favorites/Favorites';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./entities/Movies/Layout";
+import MovieNotFound from './widgets/MovieNotFound';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/favorites",
         Component: Favorites,
+      },
+      {
+        path: "/movieNotFound",
+        Component: MovieNotFound,
       },
     ],
   },

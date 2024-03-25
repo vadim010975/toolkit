@@ -1,0 +1,31 @@
+.card {
+  padding: 20px;
+  border: 1px solid #1c3962;
+  border-radius: 5px;
+  min-height: calc(100vh - 40px);
+}
+
+.card__title {
+  margin-bottom: 20px;
+  color: #1c3962;
+}
+
+.card__wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.card__data {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card__imdb-rating {
+  flex-grow: 1;
+}
+
+.card__btn_cancel {
+  align-self: flex-start;
+}

@@ -1,3 +1,4 @@
+import "./Favorites.css";
 import { useNavigate } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { removeMovie, selectFavorites } from "./favoritesSlice";
@@ -31,8 +32,8 @@ export default function Favorites() {
         {favoritesList.map(item => (
           <div className="favorites-list__item" key={item.imdbID}>
             <div onClick={() => showMovieCard(item.imdbID)} className="favorites-list__item_wrapper">
-              <div className="favorites-list__item_title">{item.Title}</div>
-              <div className="favorites-list__item_year">{item.Year}</div>
+              <div className="favorites-list__item_title">Название: {item.Title}</div>
+              <div className="favorites-list__item_year">Год: {item.Year}</div>
               <img src={item.Poster} alt="images" className="favorites-list__item_img" />
             </div>
             <button onClick={() => handleClick(item)} className="favorites-list__item_btn">Удалить из избранного</button>

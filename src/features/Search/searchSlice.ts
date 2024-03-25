@@ -4,11 +4,13 @@ import { movieAPI, type Movie } from "../../entities/Movies";
 
 export interface ListMoviesState {
   items: Movie[],
+  response: "True" | "False",
   status: "idle" | "loading" | "failed",
 }
 
 const initialState: ListMoviesState = {
   items: [],
+  response: "True",
   status: "idle",
 };
 
@@ -16,7 +18,7 @@ export const fetchListMovies = createAsyncThunk(
   "search/fetchListMovies",
   async (name: string) => {
     const response = await movieAPI.fetchListMovies(name);
-    return response.Search;
+    return response;
   },
 );
 
@@ -26,6 +28,7 @@ export const searchSlice = createSlice({
   reducers: {
     reset(state) {
       state.items = [];
+      state.response = "True";
     }
   },
   extraReducers: (builder) => {
@@ -34,8 +37,11 @@ export const searchSlice = createSlice({
         state.status = "loading";
       })
       .addCase(fetchListMovies.fulfilled, (state, action) => {
+        if (action.payload.Response === "True") {
+          state.items = action.payload.Search;
+        }
+        state.response = action.payload.Response;
         state.status = "idle";
-        state.items = action.payload;
       })
       .addCase(fetchListMovies.rejected, (state) => {
         state.status = "failed";
@@ -44,6 +50,8 @@ export const searchSlice = createSlice({
 });
 
 export const selectListMovies = (state: RootState) => state.search.items;
+export const selectResponse = (state: RootState) => state.search.response;
+export const selectStatus = (state: RootState) => state.search.status;
 
 export const { reset } = searchSlice.actions;
 
