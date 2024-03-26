@@ -4,6 +4,7 @@ import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { removeMovie, selectFavorites } from "./favoritesSlice";
 import { Movie } from "../../entities/Movies";
 import { fetchCardMovie } from "../Card/cardSlice";
+import CardMovie from "../../entities/Movies/CardMovie/CardMovie";
 
 
 export default function Favorites() {
@@ -31,11 +32,7 @@ export default function Favorites() {
       <div className="favorites-list">
         {favoritesList.map(item => (
           <div className="favorites-list__item" key={item.imdbID}>
-            <div onClick={() => showMovieCard(item.imdbID)} className="favorites-list__item_wrapper">
-              <div className="favorites-list__item_title">Название: {item.Title}</div>
-              <div className="favorites-list__item_year">Год: {item.Year}</div>
-              <img src={item.Poster} alt="images" className="favorites-list__item_img" />
-            </div>
+            <CardMovie showMovieCard={showMovieCard} movie={item} />
             <button onClick={() => handleClick(item)} className="favorites-list__item_btn">Удалить из избранного</button>
           </div>
         ))}

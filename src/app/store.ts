@@ -1,7 +1,7 @@
-import { configureStore } from '@reduxjs/toolkit';
-import searchReducer from '../features/Search/searchSlice';
-import favoritesReducer from '../features/Favorites/favoritesSlice';
-import cardReducer from '../features/Card/cardSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import searchReducer from "../features/Search/searchSlice";
+import favoritesReducer from "../features/Favorites/favoritesSlice";
+import cardReducer from "../features/Card/cardSlice";
 
 export const store = configureStore({
   reducer: {

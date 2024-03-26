@@ -1,10 +1,10 @@
-import './App.css';
-import Search from './features/Search/Search';
-import Card from './features/Card/Card';
-import Favorites from './features/Favorites/Favorites';
+import "./App.css";
+import Search from "./features/Search/Search";
+import Card from "./features/Card/Card";
+import Favorites from "./features/Favorites/Favorites";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Layout from "./entities/Movies/Layout";
-import MovieNotFound from './widgets/MovieNotFound';
+import Layout from "./app/Layout";
+import MovieNotFound from "./widgets/MovieNotFound";
 
 const router = createBrowserRouter([
   {

@@ -5,7 +5,7 @@ const Layout = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    navigate('/');
+    navigate("/");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
